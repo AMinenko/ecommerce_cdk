@@ -1,0 +1,42 @@
+name: Build and Push Products Service
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'productsservice/**' ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        
+    - name: Build JAR
+      run: mvn clean package -pl productsservice
+      
+    - uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+        
+    - uses: aws-actions/amazon-ecr-login@v2
+      id: login-ecr
+      
+    - name: Build and push Docker image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: ecommerce/products-service
+        VERSION: ${{ github.run_number }}
+      run: |
+        cd productsservice
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$VERSION .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$VERSION
+        docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$VERSION $ECR_REGISTRY/$ECR_REPOSITORY:latest
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
