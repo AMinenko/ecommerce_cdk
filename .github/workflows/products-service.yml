@@ -2,7 +2,7 @@ name: Build and Push Products Service
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
     paths: [ 'productsservice/**', 'pom.xml' ]
 
 jobs:
