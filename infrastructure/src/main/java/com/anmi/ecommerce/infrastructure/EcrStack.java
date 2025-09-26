@@ -21,7 +21,7 @@ public class EcrStack extends Stack {
         productServiceRepository = new Repository(this, "ProductsService", RepositoryProps.builder()
                 .repositoryName("productsservice")
                 .removalPolicy(RemovalPolicy.DESTROY)
-                .imageTagMutability(TagMutability.IMMUTABLE)
+                .imageTagMutability(TagMutability.MUTABLE)
                 .build());
 
     }
