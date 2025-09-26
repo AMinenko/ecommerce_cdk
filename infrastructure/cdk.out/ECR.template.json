@@ -3,7 +3,7 @@
   "ProductsServiceAD547010": {
    "Type": "AWS::ECR::Repository",
    "Properties": {
-    "ImageTagMutability": "IMMUTABLE",
+    "ImageTagMutability": "MUTABLE",
     "RepositoryName": "productsservice"
    },
    "UpdateReplacePolicy": "Delete",
