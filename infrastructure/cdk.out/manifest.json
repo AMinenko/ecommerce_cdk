@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/aaed920f299fb201af111f2a2cfb96e42fe8e06ffcc3c21844ce7c7b0a89b2d4.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e10d9d7cc0237c3bd367b5c5a1c2be134c7fb75206c7cd100ebfcb710dc46333.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -52,6 +52,18 @@
             "data": "CDKMetadataAvailable"
           }
         ],
+        "/Ecr/Exports/Output{\"Fn::GetAtt\":[\"ProductsServiceAD547010\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttProductsServiceAD547010Arn4C82272C"
+          }
+        ],
+        "/Ecr/Exports/Output{\"Ref\":\"ProductsServiceAD547010\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefProductsServiceAD54701020F240D9"
+          }
+        ],
         "/Ecr/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
@@ -66,6 +78,683 @@
         ]
       },
       "displayName": "Ecr"
+    },
+    "Vpc.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "Vpc.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "Vpc": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "Vpc.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "cost": "ProductsService",
+          "team": "com.anmi"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b5e57334441fc27a7eb8a2f5aa2e6b5d222f24dddb817077f5a7f9af47eaaa1c.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "Vpc.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "Vpc.assets"
+      ],
+      "metadata": {
+        "/Vpc": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "cost",
+                "Value": "ProductsService"
+              },
+              {
+                "Key": "team",
+                "Value": "com.anmi"
+              }
+            ]
+          }
+        ],
+        "/Vpc/ProductService/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductService417D0932"
+          }
+        ],
+        "/Vpc/ProductService/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServicePublicSubnet1Subnet45C89789"
+          }
+        ],
+        "/Vpc/ProductService/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServicePublicSubnet1RouteTable7D677304"
+          }
+        ],
+        "/Vpc/ProductService/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServicePublicSubnet1RouteTableAssociationED67C7AB"
+          }
+        ],
+        "/Vpc/ProductService/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServicePublicSubnet1DefaultRouteC03160E6"
+          }
+        ],
+        "/Vpc/ProductService/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServicePublicSubnet2SubnetE774E60C"
+          }
+        ],
+        "/Vpc/ProductService/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServicePublicSubnet2RouteTableC1D424DD"
+          }
+        ],
+        "/Vpc/ProductService/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServicePublicSubnet2RouteTableAssociation1867CA22"
+          }
+        ],
+        "/Vpc/ProductService/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServicePublicSubnet2DefaultRoute342BC91C"
+          }
+        ],
+        "/Vpc/ProductService/IsolatedSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServiceIsolatedSubnet1SubnetB1964FE2"
+          }
+        ],
+        "/Vpc/ProductService/IsolatedSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServiceIsolatedSubnet1RouteTableB1599680"
+          }
+        ],
+        "/Vpc/ProductService/IsolatedSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServiceIsolatedSubnet1RouteTableAssociation80E62057"
+          }
+        ],
+        "/Vpc/ProductService/IsolatedSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServiceIsolatedSubnet2Subnet90B2FCD5"
+          }
+        ],
+        "/Vpc/ProductService/IsolatedSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServiceIsolatedSubnet2RouteTable424FB46D"
+          }
+        ],
+        "/Vpc/ProductService/IsolatedSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServiceIsolatedSubnet2RouteTableAssociationF4C0704F"
+          }
+        ],
+        "/Vpc/ProductService/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServiceIGWA3312EF6"
+          }
+        ],
+        "/Vpc/ProductService/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServiceVPCGW800D1C91"
+          }
+        ],
+        "/Vpc/ProductService/RestrictDefaultSecurityGroupCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductServiceRestrictDefaultSecurityGroupCustomResource12A8628F"
+          }
+        ],
+        "/Vpc/Custom::VpcRestrictDefaultSGCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/Vpc/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+          }
+        ],
+        "/Vpc/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E"
+          }
+        ],
+        "/Vpc/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/Vpc/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/Vpc/Exports/Output{\"Ref\":\"ProductServicePublicSubnet1Subnet45C89789\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefProductServicePublicSubnet1Subnet45C897894D7F9CE9"
+          }
+        ],
+        "/Vpc/Exports/Output{\"Ref\":\"ProductServicePublicSubnet2SubnetE774E60C\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefProductServicePublicSubnet2SubnetE774E60CE5AC763C"
+          }
+        ],
+        "/Vpc/Exports/Output{\"Ref\":\"ProductService417D0932\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefProductService417D0932B5DEF9FB"
+          }
+        ],
+        "/Vpc/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/Vpc/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "Vpc"
+    },
+    "Cluster.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "Cluster.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "Cluster": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "Cluster.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "cost": "ProductsService",
+          "team": "com.anmi"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6abb5c5e559ab8c28f5ea23d0c6e7387b1f02c6145dd9378642d8c6a850ab1bd.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "Cluster.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "Vpc",
+        "Cluster.assets"
+      ],
+      "metadata": {
+        "/Cluster": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "cost",
+                "Value": "ProductsService"
+              },
+              {
+                "Key": "team",
+                "Value": "com.anmi"
+              }
+            ]
+          }
+        ],
+        "/Cluster/Cluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ClusterEB0386A7"
+          }
+        ],
+        "/Cluster/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/Cluster/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/Cluster/Exports/Output{\"Ref\":\"ClusterEB0386A7\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefClusterEB0386A796A0E3FE"
+          }
+        ],
+        "/Cluster/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/Cluster/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "Cluster"
+    },
+    "Alb.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "Alb.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "Alb": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "Alb.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "cost": "ProductsService",
+          "team": "com.anmi"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/8bdf219a4911d2a3a103128864f339c2bca56e37c150dad5a8e23e59f774a326.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "Alb.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "Vpc",
+        "Alb.assets"
+      ],
+      "metadata": {
+        "/Alb": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "cost",
+                "Value": "ProductsService"
+              },
+              {
+                "Key": "team",
+                "Value": "com.anmi"
+              }
+            ]
+          }
+        ],
+        "/Alb/PublicAlb/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PublicAlb84330974"
+          }
+        ],
+        "/Alb/PublicAlb/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PublicAlbSecurityGroup66576C5F"
+          }
+        ],
+        "/Alb/PublicAlb/ProductsServiceAlbListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PublicAlbProductsServiceAlbListener81A62699"
+          }
+        ],
+        "/Alb/PublicAlb/ProductsServiceAlbListener/ProductsServiceAlbTargetGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PublicAlbProductsServiceAlbListenerProductsServiceAlbTargetGroupDBB25A48"
+          }
+        ],
+        "/Alb/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/Alb/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/Alb/Exports/Output{\"Fn::GetAtt\":[\"PublicAlb84330974\",\"DNSName\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttPublicAlb84330974DNSNameFA3FF7E9"
+          }
+        ],
+        "/Alb/Exports/Output{\"Ref\":\"PublicAlbProductsServiceAlbListenerProductsServiceAlbTargetGroupDBB25A48\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefPublicAlbProductsServiceAlbListenerProductsServiceAlbTargetGroupDBB25A48F74E12E4"
+          }
+        ],
+        "/Alb/Exports/Output{\"Fn::GetAtt\":[\"PublicAlbSecurityGroup66576C5F\",\"GroupId\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttPublicAlbSecurityGroup66576C5FGroupIdC7E4F343"
+          }
+        ],
+        "/Alb/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/Alb/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "Alb"
+    },
+    "ApiGW.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ApiGW.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ApiGW": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "ApiGW.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "cost": "ProductsService",
+          "team": "com.anmi"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c51f4b1d4d80014e87b19030d39d9d1aee5d528ddec4daac15dfe93d2cb1fe0c.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ApiGW.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "Alb",
+        "ApiGW.assets"
+      ],
+      "metadata": {
+        "/ApiGW": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "cost",
+                "Value": "ProductsService"
+              },
+              {
+                "Key": "team",
+                "Value": "com.anmi"
+              }
+            ]
+          }
+        ],
+        "/ApiGW/HttpApi": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HttpApi"
+          }
+        ],
+        "/ApiGW/AlbIntegration": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AlbIntegration"
+          }
+        ],
+        "/ApiGW/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DefaultRoute"
+          }
+        ],
+        "/ApiGW/DefaultStage": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DefaultStage"
+          }
+        ],
+        "/ApiGW/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/ApiGW/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/ApiGW/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/ApiGW/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "ApiGW"
+    },
+    "ProductsService.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ProductsService.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ProductsService": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "ProductsService.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/587d7d4f846596e8b3a36e470cf3e4343d4e6d4889f3d6307c0e70f5973ce6d9.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ProductsService.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "Vpc",
+        "Cluster",
+        "Alb",
+        "Ecr",
+        "ProductsService.assets"
+      ],
+      "metadata": {
+        "/ProductsService/TaskDefinition/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskDefinitionTaskRoleFD40A61D"
+          }
+        ],
+        "/ProductsService/TaskDefinition/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskDefinitionB36D86D9"
+          }
+        ],
+        "/ProductsService/TaskDefinition/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskDefinitionExecutionRole8D61C2FB"
+          }
+        ],
+        "/ProductsService/TaskDefinition/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskDefinitionExecutionRoleDefaultPolicy1F3406F5"
+          }
+        ],
+        "/ProductsService/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogGroupF5B46931"
+          }
+        ],
+        "/ProductsService/ProductsService": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "minHealthyPercent has not been configured so the default value of 50% is used. The number of running tasks will decrease below the desired count during deployments etc. See https://github.com/aws/aws-cdk/issues/31705 [ack: @aws-cdk/aws-ecs:minHealthyPercent]",
+            "trace": [
+              "Annotations.addMessage (/var/folders/26/nbfqv6qs09ldp19yw2dxw2v80000gn/T/jsii-kernel-bk9PDJ/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1608)",
+              "Annotations.addWarningV2 (/var/folders/26/nbfqv6qs09ldp19yw2dxw2v80000gn/T/jsii-kernel-bk9PDJ/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
+              "new BaseService (/var/folders/26/nbfqv6qs09ldp19yw2dxw2v80000gn/T/jsii-kernel-bk9PDJ/node_modules/aws-cdk-lib/aws-ecs/lib/base/base-service.js:1:8100)",
+              "new FargateService (/var/folders/26/nbfqv6qs09ldp19yw2dxw2v80000gn/T/jsii-kernel-bk9PDJ/node_modules/aws-cdk-lib/aws-ecs/lib/fargate/fargate-service.js:1:3551)",
+              "Kernel._Kernel_create (/private/var/folders/26/nbfqv6qs09ldp19yw2dxw2v80000gn/T/jsii-java-runtime11383835209439999431/lib/program.js:548:25)",
+              "Kernel.create (/private/var/folders/26/nbfqv6qs09ldp19yw2dxw2v80000gn/T/jsii-java-runtime11383835209439999431/lib/program.js:218:93)",
+              "KernelHost.processRequest (/private/var/folders/26/nbfqv6qs09ldp19yw2dxw2v80000gn/T/jsii-java-runtime11383835209439999431/lib/program.js:15479:36)",
+              "KernelHost.run (/private/var/folders/26/nbfqv6qs09ldp19yw2dxw2v80000gn/T/jsii-java-runtime11383835209439999431/lib/program.js:15439:22)",
+              "Immediate._onImmediate (/private/var/folders/26/nbfqv6qs09ldp19yw2dxw2v80000gn/T/jsii-java-runtime11383835209439999431/lib/program.js:15440:45)",
+              "process.processImmediate (node:internal/timers:491:21)"
+            ]
+          }
+        ],
+        "/ProductsService/ProductsService/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductsServiceDC973D0F"
+          }
+        ],
+        "/ProductsService/ProductsService/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductsServiceSecurityGroupA117EEFC"
+          }
+        ],
+        "/ProductsService/ProductsService/SecurityGroup/from AlbPublicAlbSecurityGroup79450BDF:8080": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductsServiceSecurityGroupfromAlbPublicAlbSecurityGroup79450BDF8080ADF34EBD"
+          }
+        ],
+        "/ProductsService/ProductsService/SecurityGroup/AlbPublicAlbSecurityGroup79450BDF:8080 from": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductsServiceSecurityGroupAlbPublicAlbSecurityGroup79450BDF8080from5739B9F4"
+          }
+        ],
+        "/ProductsService/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/ProductsService/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/ProductsService/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/ProductsService/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "ProductsService"
     },
     "Tree": {
       "type": "cdk:tree",

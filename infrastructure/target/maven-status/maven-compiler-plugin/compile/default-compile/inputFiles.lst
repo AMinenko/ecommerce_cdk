@@ -1,2 +1,7 @@
-/Users/mr.minenko/DevArea/Study/cdk/ecommerce/infrastructure/src/main/java/com/anmi/ecommerce/infrastructure/Ecr.java
+/Users/mr.minenko/DevArea/Study/cdk/ecommerce/infrastructure/src/main/java/com/anmi/ecommerce/infrastructure/VpcStack.java
+/Users/mr.minenko/DevArea/Study/cdk/ecommerce/infrastructure/src/main/java/com/anmi/ecommerce/infrastructure/EcrStack.java
+/Users/mr.minenko/DevArea/Study/cdk/ecommerce/infrastructure/src/main/java/com/anmi/ecommerce/infrastructure/ProductsServiceStack.java
+/Users/mr.minenko/DevArea/Study/cdk/ecommerce/infrastructure/src/main/java/com/anmi/ecommerce/infrastructure/AlbStack.java
 /Users/mr.minenko/DevArea/Study/cdk/ecommerce/infrastructure/src/main/java/com/anmi/ecommerce/infrastructure/ECommerceEcsCdkApp.java
+/Users/mr.minenko/DevArea/Study/cdk/ecommerce/infrastructure/src/main/java/com/anmi/ecommerce/infrastructure/ApiGatewayStack.java
+/Users/mr.minenko/DevArea/Study/cdk/ecommerce/infrastructure/src/main/java/com/anmi/ecommerce/infrastructure/ClusterStack.java

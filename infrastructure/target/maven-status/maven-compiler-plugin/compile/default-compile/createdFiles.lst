@@ -1,1 +1,9 @@
-com/anmi/ecommerce/infrastructure/Ecr.class
+com/anmi/ecommerce/infrastructure/ProductsServiceStack.class
+com/anmi/ecommerce/infrastructure/AlbStack.class
+com/anmi/ecommerce/infrastructure/AlbStackProps.class
+com/anmi/ecommerce/infrastructure/ApiGatewayStack.class
+com/anmi/ecommerce/infrastructure/ProductsServiceProps.class
+com/anmi/ecommerce/infrastructure/VpcStack.class
+com/anmi/ecommerce/infrastructure/ClusterStackProps.class
+com/anmi/ecommerce/infrastructure/ApiGatewayStackProps.class
+com/anmi/ecommerce/infrastructure/ClusterStack.class

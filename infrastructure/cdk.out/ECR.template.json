@@ -289,6 +289,27 @@
    ]
   }
  },
+ "Outputs": {
+  "ExportsOutputFnGetAttProductsServiceAD547010Arn4C82272C": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ProductsServiceAD547010",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "Ecr:ExportsOutputFnGetAttProductsServiceAD547010Arn4C82272C"
+   }
+  },
+  "ExportsOutputRefProductsServiceAD54701020F240D9": {
+   "Value": {
+    "Ref": "ProductsServiceAD547010"
+   },
+   "Export": {
+    "Name": "Ecr:ExportsOutputRefProductsServiceAD54701020F240D9"
+   }
+  }
+ },
  "Parameters": {
   "BootstrapVersion": {
    "Type": "AWS::SSM::Parameter::Value<String>",

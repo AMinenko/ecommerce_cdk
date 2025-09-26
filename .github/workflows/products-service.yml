@@ -18,7 +18,9 @@ jobs:
         distribution: 'temurin'
         
     - name: Build JAR
-      run: mvn clean package -pl productsservice
+      run: |
+        cd productsservice
+        mvn clean package
       
     - uses: aws-actions/configure-aws-credentials@v4
       with:
